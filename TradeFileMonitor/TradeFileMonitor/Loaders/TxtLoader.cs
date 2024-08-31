@@ -13,7 +13,7 @@ namespace TradeFileMonitor.Loaders
             var lines = File.ReadAllLines(filePath);
             return lines.Skip(1).Select(line =>
             {
-                var columns = line.Split(';'); // TXT dosyaları için ayırıcı noktalı virgül
+                var columns = line.Split(';');
                 return new DataRecord
                 {
                     Date = columns[0],

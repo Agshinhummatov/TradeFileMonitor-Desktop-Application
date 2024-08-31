@@ -29,11 +29,12 @@
 
             <TextBox x:Name="fileContentTextBox" HorizontalAlignment="Right" Width="180" Margin="10,0,0,0" VerticalAlignment="Stretch" IsReadOnly="True" TextWrapping="Wrap"/>
 
-            <TextBox x:Name="intervalTextBox" HorizontalAlignment="Right" Width="100" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="intervalTextBox" HorizontalAlignment="Right" Width="100" Margin="10,0,0,0" VerticalAlignment="Top" Text="{Binding MonitoringInterval, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- Add DataGrid here -->
-            <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="500" Height="200"/>
-            <Button Content="Load File" Click="OnLoadFileClick" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Height="18" Width="73"/>
+            <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="500" Height="200" AutoGenerateColumns="True"/>
+
+            <Button Content="Load File" Click="OnLoadFileClick" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
         </Grid>
     </Grid>
 </Window>

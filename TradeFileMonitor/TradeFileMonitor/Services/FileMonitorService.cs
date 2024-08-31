@@ -24,7 +24,7 @@ namespace TradeFileMonitor.Services
             _fileWatcher.Created += OnNewFileDetected;
 
             _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromSeconds(5); // Varsayılan interval
+            _timer.Interval = TimeSpan.FromSeconds(5); //iInterval
         }
 
         public void ChangeInterval(int seconds)

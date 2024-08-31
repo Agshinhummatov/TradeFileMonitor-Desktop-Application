@@ -58,11 +58,12 @@ namespace TradeFileMonitor
             System.Windows.Application.Current.Shutdown();
         }
 
+   
         private void OnLoadFileClick(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "CSV Files (*.csv)|*.csv|XML Files (*.xml)|*.xml|All Files (*.*)|*.*",
+                Filter = "CSV Files (*.csv)|*.csv|XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
                 FilterIndex = 1,
                 RestoreDirectory = true
             };
@@ -81,73 +82,6 @@ namespace TradeFileMonitor
                 }
             }
         }
-
-        //private DataTable LoadData(string filePath)
-        //{
-        //    var dataTable = new DataTable();
-        //    var fileExtension = Path.GetExtension(filePath).ToLower();
-
-        //    if (fileExtension == ".csv")
-        //    {
-        //        using (var reader = new StreamReader(filePath))
-        //        {
-        //            var headers = reader.ReadLine().Split(',');
-        //            foreach (var header in headers)
-        //            {
-        //                dataTable.Columns.Add(header);
-        //            }
-
-        //            while (!reader.EndOfStream)
-        //            {
-        //                var row = reader.ReadLine().Split(',');
-        //                dataTable.Rows.Add(row);
-        //            }
-        //        }
-        //    }
-        //    else if (fileExtension == ".txt")
-        //    {
-        //        using (var reader = new StreamReader(filePath))
-        //        {
-        //            var headers = reader.ReadLine().Split(';'); // TXT dosyaları için ayırıcı noktalı virgül olabilir
-        //            foreach (var header in headers)
-        //            {
-        //                dataTable.Columns.Add(header);
-        //            }
-
-        //            while (!reader.EndOfStream)
-        //            {
-        //                var row = reader.ReadLine().Split(';'); // Satırları ayırmak için noktalı virgül
-        //                dataTable.Rows.Add(row);
-        //            }
-        //        }
-        //    }
-        //    else if (fileExtension == ".xml")
-        //    {
-        //        var xdoc = XDocument.Load(filePath);
-        //        var dataRecords = xdoc.Descendants("value").Select(node =>
-        //        {
-        //            var row = new object[6];
-        //            row[0] = node.Attribute("date")?.Value;
-        //            row[1] = node.Attribute("open")?.Value;
-        //            row[2] = node.Attribute("high")?.Value;
-        //            row[3] = node.Attribute("low")?.Value;
-        //            row[4] = node.Attribute("close")?.Value;
-        //            row[5] = node.Attribute("volume")?.Value;
-        //            return row;
-        //        });
-
-        //        foreach (var row in dataRecords)
-        //        {
-        //            dataTable.Rows.Add(row);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        throw new NotSupportedException("File type not supported.");
-        //    }
-
-        //    return dataTable;
-        //}
 
         private DataTable LoadData(string filePath)
         {
@@ -175,7 +109,7 @@ namespace TradeFileMonitor
             {
                 using (var reader = new StreamReader(filePath))
                 {
-                    var headers = reader.ReadLine().Split(';'); // TXT dosyaları için ayırıcı noktalı virgül olabilir
+                    var headers = reader.ReadLine().Split(';'); 
                     foreach (var header in headers)
                     {
                         dataTable.Columns.Add(header);
@@ -183,7 +117,7 @@ namespace TradeFileMonitor
 
                     while (!reader.EndOfStream)
                     {
-                        var row = reader.ReadLine().Split(';'); // Satırları ayırmak için noktalı virgül
+                        var row = reader.ReadLine().Split(';'); 
                         dataTable.Rows.Add(row);
                     }
                 }

@@ -156,5 +156,25 @@ namespace TradeFileMonitor
 
             return dataTable;
         }
+
+        private void intervalTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(intervalTextBox.Text, out int interval))
+            {
+                if (interval > 0)
+                {
+                    _fileMonitorService.ChangeInterval(interval);
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Interval must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Invalid interval value.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
     }
 }

@@ -1,14 +1,14 @@
-C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\bin\Debug\TradeFileMonitor.exe.config
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\bin\Debug\TradeFileMonitor.exe
-C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\bin\Debug\TradeFileMonitor.pdb
+C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\bin\Debug\TradeFileMonitor.exe.config
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor.csproj.AssemblyReference.cache
+C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\MainWindow.baml
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\MainWindow.g.cs
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\App.g.cs
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor_MarkupCompile.cache
-C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\MainWindow.baml
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor.g.resources
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor.Properties.Resources.resources
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor.csproj.GenerateResource.cache
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor.csproj.CoreCompileInputs.cache
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor.exe
 C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\obj\Debug\TradeFileMonitor.pdb
+C:\Users\akshin.hummatov\Desktop\XalqBank esas\TradeFileMonitor\TradeFileMonitor\bin\Debug\TradeFileMonitor.pdb

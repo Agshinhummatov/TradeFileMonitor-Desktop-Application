@@ -1,26 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms; // Windows Forms için gerekli
+using System.Windows.Forms;
 using System.Xml.Linq;
 using TradeFileMonitor.Loaders;
+using TradeFileMonitor.Models;
 using TradeFileMonitor.Services;
 
 namespace TradeFileMonitor
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
         private FileMonitorService _fileMonitorService;
+        private LoaderFactory _loaderFactory; 
 
         public MainWindow()
         {
             InitializeComponent();
-            var loaderFactory = new LoaderFactory();
+            _loaderFactory = new LoaderFactory(); 
             string csvDirectoryPath = @"C:\Users\akshin.hummatov\Desktop\CSVFiles";
-            _fileMonitorService = new FileMonitorService(csvDirectoryPath, loaderFactory);
+            _fileMonitorService = new FileMonitorService(csvDirectoryPath, _loaderFactory, fileListView);
         }
 
         private void OnChangeDirectoryClick(object sender, RoutedEventArgs e)
@@ -31,7 +34,8 @@ namespace TradeFileMonitor
                 string selectedPath = dialog.SelectedPath;
                 try
                 {
-                    _fileMonitorService = new FileMonitorService(selectedPath, new LoaderFactory());
+                    _fileMonitorService.StopMonitoring(); 
+                    _fileMonitorService = new FileMonitorService(selectedPath, _loaderFactory, fileListView);
                     _fileMonitorService.StartMonitoring();
                 }
                 catch (ArgumentException ex)
@@ -43,13 +47,13 @@ namespace TradeFileMonitor
 
         private void OnChangeIntervalClick(object sender, RoutedEventArgs e)
         {
-            if (int.TryParse(intervalTextBox.Text, out int interval))
+            if (int.TryParse(intervalTextBox.Text, out int newInterval) && newInterval > 0)
             {
-                _fileMonitorService.ChangeInterval(interval);
+                _fileMonitorService.ChangeInterval(newInterval);
             }
             else
             {
-                System.Windows.MessageBox.Show("Invalid interval value."); // WPF MessageBox
+                System.Windows.MessageBox.Show("Please enter a valid range.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -58,7 +62,6 @@ namespace TradeFileMonitor
             System.Windows.Application.Current.Shutdown();
         }
 
-   
         private void OnLoadFileClick(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -74,13 +77,24 @@ namespace TradeFileMonitor
                 try
                 {
                     DataTable dataTable = LoadData(filePath);
-                    dataGrid.ItemsSource = dataTable.DefaultView; // Updated reference to dataGrid
+                    dataGrid.ItemsSource = dataTable.DefaultView;
+
+                    // Dosyayı fileListView'e de ekleyin
+                    var dataRecords = LoadDataFromFile(filePath);
+                    _fileMonitorService.UpdateFileListView(dataRecords);
                 }
                 catch (Exception ex)
                 {
                     System.Windows.MessageBox.Show($"Error loading file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        private List<DataRecord> LoadDataFromFile(string filePath)
+        {
+            var extension = Path.GetExtension(filePath);
+            var loader = _loaderFactory.GetLoader(extension);
+            return loader?.Load(filePath)?.ToList() ?? new List<DataRecord>();
         }
 
         private DataTable LoadData(string filePath)
@@ -109,7 +123,7 @@ namespace TradeFileMonitor
             {
                 using (var reader = new StreamReader(filePath))
                 {
-                    var headers = reader.ReadLine().Split(';'); 
+                    var headers = reader.ReadLine().Split(';');
                     foreach (var header in headers)
                     {
                         dataTable.Columns.Add(header);
@@ -117,7 +131,7 @@ namespace TradeFileMonitor
 
                     while (!reader.EndOfStream)
                     {
-                        var row = reader.ReadLine().Split(';'); 
+                        var row = reader.ReadLine().Split(';');
                         dataTable.Rows.Add(row);
                     }
                 }
@@ -159,22 +173,16 @@ namespace TradeFileMonitor
 
         private void intervalTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (int.TryParse(intervalTextBox.Text, out int interval))
+            if (int.TryParse(intervalTextBox.Text, out int interval) && interval > 0)
             {
-                if (interval > 0)
-                {
-                    _fileMonitorService.ChangeInterval(interval);
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show("Interval must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                _fileMonitorService.ChangeInterval(interval);
             }
             else
             {
-                System.Windows.MessageBox.Show("Invalid interval value.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Interval must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
     }
+
+
 }

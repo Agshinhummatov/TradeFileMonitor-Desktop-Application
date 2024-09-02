@@ -3,43 +3,43 @@
   "WorkspaceRootPath": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|c:\\users\\akshin.hummatov\\desktop\\xalqbank esas\\tradefilemonitor\\tradefilemonitor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|c:\\users\\akshin.hummatov\\desktop\\xalqbank esas\\tradefilemonitor\\tradefilemonitor\\services\\filemonitorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\services\\filemonitorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\services\\filemonitorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\interface\\iloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\interface\\iloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\csvloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\csvloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\loaderfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\loaderfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\txtloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\txtloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\csvloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\csvloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\interface\\iloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\interface\\iloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\akshin.hummatov\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\xmlloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\xmlloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\models\\datarecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\models\\datarecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\loaders\\txtloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\loaders\\txtloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\akshin.hummatov\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\tradefilemonitor\\models\\datarecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E333455-756F-4977-95F8-D1A9B2D549AD}|TradeFileMonitor\\TradeFileMonitor.csproj|solutionrelative:tradefilemonitor\\models\\datarecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\akshin.hummatov\\AppData\\Local\\Temp\\.vsdbgsrc\\c6a5a7f5f1f891b96e7ce20decdfb3b83d9ea38a008c3e03a9a2dc211cf459f6\\WpfXamlLoader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -56,7 +56,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -68,19 +68,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CsvLoader.cs",
-              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\CsvLoader.cs",
-              "RelativeDocumentMoniker": "TradeFileMonitor\\Loaders\\CsvLoader.cs",
-              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\CsvLoader.cs",
-              "RelativeToolTip": "TradeFileMonitor\\Loaders\\CsvLoader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TradeFileMonitor\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\MainWindow.xaml.cs",
+              "RelativeToolTip": "TradeFileMonitor\\MainWindow.xaml.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAA3wAcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T11:45:44.517Z"
+              "WhenOpened": "2024-08-31T10:59:16.557Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "FileMonitorService.cs",
+              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Services\\FileMonitorService.cs",
+              "RelativeDocumentMoniker": "TradeFileMonitor\\Services\\FileMonitorService.cs",
+              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Services\\FileMonitorService.cs",
+              "RelativeToolTip": "TradeFileMonitor\\Services\\FileMonitorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T11:07:28.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ILoader.cs",
               "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\Interface\\ILoader.cs",
               "RelativeDocumentMoniker": "TradeFileMonitor\\Loaders\\Interface\\ILoader.cs",
@@ -93,64 +106,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "TradeFileMonitor\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\MainWindow.xaml.cs",
-              "RelativeToolTip": "TradeFileMonitor\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAQwKwAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T10:59:16.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\MainWindow.xaml",
               "RelativeDocumentMoniker": "TradeFileMonitor\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\MainWindow.xaml*",
-              "RelativeToolTip": "TradeFileMonitor\\MainWindow.xaml*",
+              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\MainWindow.xaml",
+              "RelativeToolTip": "TradeFileMonitor\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-31T10:59:17.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-31T18:58:01.37Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FileMonitorService.cs",
-              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Services\\FileMonitorService.cs",
-              "RelativeDocumentMoniker": "TradeFileMonitor\\Services\\FileMonitorService.cs",
-              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Services\\FileMonitorService.cs",
-              "RelativeToolTip": "TradeFileMonitor\\Services\\FileMonitorService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T11:07:28.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "LoaderFactory.cs",
               "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\LoaderFactory.cs",
               "RelativeDocumentMoniker": "TradeFileMonitor\\Loaders\\LoaderFactory.cs",
               "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\LoaderFactory.cs",
               "RelativeToolTip": "TradeFileMonitor\\Loaders\\LoaderFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T11:06:34.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TxtLoader.cs",
-              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\TxtLoader.cs",
-              "RelativeDocumentMoniker": "TradeFileMonitor\\Loaders\\TxtLoader.cs",
-              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\TxtLoader.cs",
-              "RelativeToolTip": "TradeFileMonitor\\Loaders\\TxtLoader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CsvLoader.cs",
+              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\CsvLoader.cs",
+              "RelativeDocumentMoniker": "TradeFileMonitor\\Loaders\\CsvLoader.cs",
+              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\CsvLoader.cs",
+              "RelativeToolTip": "TradeFileMonitor\\Loaders\\CsvLoader.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T11:51:12.301Z"
+              "WhenOpened": "2024-08-31T11:45:44.517Z"
             },
             {
               "$type": "Document",
@@ -160,34 +146,45 @@
               "RelativeDocumentMoniker": "TradeFileMonitor\\Loaders\\XmlLoader.cs",
               "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\XmlLoader.cs",
               "RelativeToolTip": "TradeFileMonitor\\Loaders\\XmlLoader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T11:51:43.35Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Application.cs",
+              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs",
+              "ToolTip": "C:\\Users\\akshin.hummatov\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs",
+              "ViewState": "AgIAAJ4GAAAAAAAAAAAAwKwGAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T13:00:16.971Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "TxtLoader.cs",
+              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\TxtLoader.cs",
+              "RelativeDocumentMoniker": "TradeFileMonitor\\Loaders\\TxtLoader.cs",
+              "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Loaders\\TxtLoader.cs",
+              "RelativeToolTip": "TradeFileMonitor\\Loaders\\TxtLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T11:51:12.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "DataRecord.cs",
               "DocumentMoniker": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Models\\DataRecord.cs",
               "RelativeDocumentMoniker": "TradeFileMonitor\\Models\\DataRecord.cs",
               "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\Models\\DataRecord.cs",
               "RelativeToolTip": "TradeFileMonitor\\Models\\DataRecord.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-31T11:48:52.396Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Application.cs",
-              "DocumentMoniker": "C:\\Users\\akshin.hummatov\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs",
-              "ToolTip": "C:\\Users\\akshin.hummatov\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\fa6bc87b25baa4e9ad9a4c60d3a2c4806f339c0b6f13fab1522ceaff8877ae44\\Application.cs [Read Only]",
-              "ViewState": "AgIAACQFAAAAAAAAAAAQwKwGAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T13:00:16.971Z",
-              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
@@ -211,8 +208,7 @@
               "ToolTip": "C:\\Users\\akshin.hummatov\\Desktop\\XalqBank esas\\TradeFileMonitor\\TradeFileMonitor\\App.xaml",
               "RelativeToolTip": "TradeFileMonitor\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-31T11:09:23.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-31T11:09:23.63Z"
             }
           ]
         }

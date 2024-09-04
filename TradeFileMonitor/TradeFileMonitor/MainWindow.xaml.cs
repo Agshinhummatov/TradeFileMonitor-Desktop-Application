@@ -3,57 +3,96 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using TradeFileMonitor.Constants;
+using TradeFileMonitor.Helpers;
 using TradeFileMonitor.Loaders;
+using TradeFileMonitor.Loaders.Interface;
 using TradeFileMonitor.Models;
 using TradeFileMonitor.Services;
+using TradeFileMonitor.Services.Interfaces;
 
 namespace TradeFileMonitor
 {
-    public partial class MainWindow : System.Windows.Window
+    public partial class MainWindow : Window
     {
-        private FileMonitorService _fileMonitorService;
-        private LoaderFactory _loaderFactory; 
+        private IFileMonitorService _fileMonitorService;
+        private ILoaderFactory _loaderFactory;
 
         public MainWindow()
         {
             InitializeComponent();
-            _loaderFactory = new LoaderFactory(); 
-            string csvDirectoryPath = @"C:\Users\akshin.hummatov\Desktop\CSVFiles";
-            _fileMonitorService = new FileMonitorService(csvDirectoryPath, _loaderFactory, fileListView);
+            _loaderFactory = new LoaderFactory();
+            InitializeFileMonitorService();
+        }
+
+        private void InitializeFileMonitorService()
+        {
+            using (var dialog = new FolderBrowserDialog())
+            {
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string selectedPath = dialog.SelectedPath;
+                    try
+                    {
+                        _fileMonitorService = new FileMonitorService(selectedPath, _loaderFactory, fileListView);
+                        _fileMonitorService.StartMonitoring();
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        ShowErrorMessage(ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowErrorMessage(string.Format(FileLoaderErrors.UnexpectedErrorMessage, ex.Message));
+                    }
+                }
+                else
+                {
+                    ShowErrorMessage(FileLoaderErrors.NoDirectorySelectedMessage);
+                    System.Windows.Application.Current.Shutdown();
+                }
+            }
         }
 
         private void OnChangeDirectoryClick(object sender, RoutedEventArgs e)
         {
-            var dialog = new FolderBrowserDialog();
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            using (var dialog = new FolderBrowserDialog())
             {
-                string selectedPath = dialog.SelectedPath;
-                try
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    _fileMonitorService.StopMonitoring(); 
-                    _fileMonitorService = new FileMonitorService(selectedPath, _loaderFactory, fileListView);
-                    _fileMonitorService.StartMonitoring();
-                }
-                catch (ArgumentException ex)
-                {
-                    System.Windows.MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    string selectedPath = dialog.SelectedPath;
+                    try
+                    {
+                        _fileMonitorService.StopMonitoring();
+                        _fileMonitorService = new FileMonitorService(selectedPath, _loaderFactory, fileListView);
+                        _fileMonitorService.StartMonitoring();
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        ShowErrorMessage(ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowErrorMessage(string.Format(FileLoaderErrors.UnexpectedErrorMessage, ex.Message));
+                    }
                 }
             }
         }
 
         private void OnChangeIntervalClick(object sender, RoutedEventArgs e)
         {
-            if (int.TryParse(intervalTextBox.Text, out int newInterval) && newInterval > 0)
+            if (double.TryParse(intervalTextBox.Text, out var newInterval) && newInterval > 0)
             {
                 _fileMonitorService.ChangeInterval(newInterval);
             }
             else
             {
-                System.Windows.MessageBox.Show("Please enter a valid range.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowErrorMessage(FileLoaderErrors.InvalidIntervalMessage);
             }
         }
 
@@ -62,9 +101,9 @@ namespace TradeFileMonitor
             System.Windows.Application.Current.Shutdown();
         }
 
-        private void OnLoadFileClick(object sender, RoutedEventArgs e)
+        private async void OnLoadFileClick(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog
+            var openFileDialog = new OpenFileDialog
             {
                 Filter = "CSV Files (*.csv)|*.csv|XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
                 FilterIndex = 1,
@@ -76,25 +115,41 @@ namespace TradeFileMonitor
                 string filePath = openFileDialog.FileName;
                 try
                 {
+                    var dataRecords = await LoadDataFromFileAsync(filePath);
+                    // Güncellenmiş dosya içeriğini GUI'ye ekleyin.
+                     _fileMonitorService.UpdateFileListView(dataRecords);
+
+                    // DataGrid güncellemesi.
                     DataTable dataTable = LoadData(filePath);
                     dataGrid.ItemsSource = dataTable.DefaultView;
-
-                    // Dosyayı fileListView'e de ekleyin
-                    var dataRecords = LoadDataFromFile(filePath);
-                    _fileMonitorService.UpdateFileListView(dataRecords);
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.MessageBox.Show($"Error loading file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowErrorMessage(string.Format(FileLoaderErrors.ErrorLoadingFileMessage, ex.Message));
                 }
             }
         }
 
-        private List<DataRecord> LoadDataFromFile(string filePath)
+
+        private async Task<List<DataRecord>> LoadDataFromFileAsync(string filePath)
         {
-            var extension = Path.GetExtension(filePath);
-            var loader = _loaderFactory.GetLoader(extension);
-            return loader?.Load(filePath)?.ToList() ?? new List<DataRecord>();
+            var extension = Path.GetExtension(filePath).ToLower();
+            var fileExtension = FileExtensionHelper.ParseFileExtension(extension);
+            var loader = _loaderFactory.GetLoader(fileExtension);
+
+            if (loader == null)
+                return new List<DataRecord>();
+
+            try
+            {
+                var dataRecords = await loader.LoadAsync(filePath);
+                return dataRecords.ToList();
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage(string.Format(FileLoaderErrors.ErrorLoadingFileMessage, ex.Message));
+                throw;
+            }
         }
 
         private DataTable LoadData(string filePath)
@@ -102,11 +157,13 @@ namespace TradeFileMonitor
             var dataTable = new DataTable();
             var fileExtension = Path.GetExtension(filePath).ToLower();
 
-            if (fileExtension == ".csv")
+            if (fileExtension == ".csv" || fileExtension == ".txt")
             {
+                char delimiter = fileExtension == ".csv" ? ',' : ';';
+
                 using (var reader = new StreamReader(filePath))
                 {
-                    var headers = reader.ReadLine().Split(',');
+                    var headers = reader.ReadLine().Split(delimiter);
                     foreach (var header in headers)
                     {
                         dataTable.Columns.Add(header);
@@ -114,24 +171,7 @@ namespace TradeFileMonitor
 
                     while (!reader.EndOfStream)
                     {
-                        var row = reader.ReadLine().Split(',');
-                        dataTable.Rows.Add(row);
-                    }
-                }
-            }
-            else if (fileExtension == ".txt")
-            {
-                using (var reader = new StreamReader(filePath))
-                {
-                    var headers = reader.ReadLine().Split(';');
-                    foreach (var header in headers)
-                    {
-                        dataTable.Columns.Add(header);
-                    }
-
-                    while (!reader.EndOfStream)
-                    {
-                        var row = reader.ReadLine().Split(';');
+                        var row = reader.ReadLine().Split(delimiter);
                         dataTable.Rows.Add(row);
                     }
                 }
@@ -165,24 +205,15 @@ namespace TradeFileMonitor
             }
             else
             {
-                throw new NotSupportedException("File type not supported.");
+                throw new NotSupportedException(FileLoaderErrors.UnsupportedFileTypeMessage);
             }
 
             return dataTable;
         }
 
-        private void intervalTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void ShowErrorMessage(string message)
         {
-            if (int.TryParse(intervalTextBox.Text, out int interval) && interval > 0)
-            {
-                _fileMonitorService.ChangeInterval(interval);
-            }
-            else
-            {
-                System.Windows.MessageBox.Show("Interval must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            System.Windows.MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
-
-
 }

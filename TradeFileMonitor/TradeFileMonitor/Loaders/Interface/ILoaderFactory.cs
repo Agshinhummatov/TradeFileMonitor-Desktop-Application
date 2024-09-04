@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TradeFileMonitor.Models;
+using TradeFileMonitor.Helpers;
 
 namespace TradeFileMonitor.Loaders.Interface
 {
-    public interface ILoader
+    public interface ILoaderFactory
     {
-        Task<IEnumerable<DataRecord>> LoadAsync(string filePath);
+       ILoader GetLoader(FileExtension fileExtension);
     }
 }
-

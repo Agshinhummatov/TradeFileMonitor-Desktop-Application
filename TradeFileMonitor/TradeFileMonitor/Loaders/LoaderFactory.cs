@@ -1,29 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using System.Xml;
+using TradeFileMonitor.Helpers;
 using TradeFileMonitor.Loaders.Interface;
+using TradeFileMonitor.Models;
 
 namespace TradeFileMonitor.Loaders
 {
-    public class LoaderFactory
+    public class LoaderFactory : ILoaderFactory
     {
-        public ILoader GetLoader(string extension)
+        public ILoader GetLoader(string fileExtension)
         {
-            switch (extension.ToLower())
+            var extension = FileExtensionHelper.ParseFileExtension(fileExtension);
+            return GetLoader(extension);
+        }
+        public ILoader GetLoader(FileExtension fileExtension)
+        {
+            switch (fileExtension)
             {
-                case ".csv":
+                case FileExtension.Csv:
                     return new CsvLoader();
-                case ".txt":
+                case FileExtension.Txt:
                     return new TxtLoader();
-                case ".xml":
+                case FileExtension.Xml:
                     return new XmlLoader();
                 default:
-                    throw new NotSupportedException($"The file extension {extension} is not supported.");
+                      throw new NotSupportedException($"File extension '{fileExtension}' is not supported.");
             }
         }
+
     }
 }

@@ -56,12 +56,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Constants\ErrorMessages.cs" />
+    <Compile Include="Constants\FileLoaderErrors.cs" />
+    <Compile Include="Helpers\FileExtension.cs" />
+    <Compile Include="Helpers\FileExtensionHelper.cs" />
+    <Compile Include="Helpers\FileProcessor.cs" />
     <Compile Include="Loaders\CsvLoader.cs" />
     <Compile Include="Loaders\Interface\ILoader.cs" />
+    <Compile Include="Loaders\Interface\ILoaderFactory.cs" />
     <Compile Include="Loaders\TxtLoader.cs" />
     <Compile Include="Loaders\XmlLoader.cs" />
     <Compile Include="Models\DataRecord.cs" />
     <Compile Include="Services\FileMonitorService.cs" />
+    <Compile Include="Services\Interfaces\IFileMonitorService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

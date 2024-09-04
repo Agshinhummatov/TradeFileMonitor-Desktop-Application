@@ -14,5 +14,7 @@ namespace TradeFileMonitor.Models
         public decimal Low { get; set; }
         public decimal Close { get; set; }
         public int Volume { get; set; }
+
+
     }
 }

@@ -1,120 +1,60 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Windows;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Controls;
-using System.Windows.Threading;
+using TradeFileMonitor.Constants;
+using TradeFileMonitor.Helpers;
 using TradeFileMonitor.Loaders;
+using TradeFileMonitor.Loaders.Interface;
 using TradeFileMonitor.Models;
+using TradeFileMonitor.Services.Interfaces;
 
-namespace TradeFileMonitor.Services
+public class FileMonitorService : IFileMonitorService
 {
-    public class FileMonitorService
+    private readonly string _directoryPath;
+    private readonly ILoaderFactory _loaderFactory;
+    private readonly ListView _fileListView;
+    private readonly Timer _timer;
+    private readonly ConcurrentDictionary<string, DateTime> _fileTimestamps = new ConcurrentDictionary<string, DateTime>();
+    private const double DefaultInterval = 5000;
+
+    public FileMonitorService(string directoryPath, ILoaderFactory loaderFactory, ListView fileListView, double interval = DefaultInterval)
     {
-        private readonly string _directoryPath;
-        private readonly LoaderFactory _loaderFactory;
-        private FileSystemWatcher _fileWatcher;
-        private readonly DispatcherTimer _timer;
-        private readonly ListView _listView;
+        _directoryPath = directoryPath ?? throw new ArgumentNullException(nameof(directoryPath));
+        _loaderFactory = loaderFactory ?? throw new ArgumentNullException(nameof(loaderFactory));
+        _fileListView = fileListView ?? throw new ArgumentNullException(nameof(fileListView));
+        _timer = new Timer(interval);
+        _timer.Elapsed += async (sender, e) => await OnTimedEvent(sender, e);
 
-        public FileMonitorService(string directoryPath, LoaderFactory loaderFactory, ListView listView)
+
+    }
+
+    public void StartMonitoring() => _timer.Start();
+
+    public void StopMonitoring() => _timer.Stop();
+
+    public void ChangeInterval(double interval)
+    {
+        if (interval <= 0)
         {
-            _directoryPath = directoryPath;
-            _loaderFactory = loaderFactory;
-            _listView = listView; 
-            _fileWatcher = new FileSystemWatcher(_directoryPath);
-            _fileWatcher.Created += OnNewFileDetected;
-
-            _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromSeconds(5); 
+            throw new ArgumentException(ErrorMessages.IntervalMustBePositive, nameof(interval));
         }
 
-        public void ChangeInterval(int seconds)
-        {
-            _timer.Interval = TimeSpan.FromSeconds(seconds);
-        }
+        _timer.Interval = interval;
+    }
 
-        private void OnNewFileDetected(object sender, FileSystemEventArgs e)
-        {
-            var extension = Path.GetExtension(e.FullPath);
-            var loader = _loaderFactory.GetLoader(extension);
-
-            if (loader == null)
-            {
-                MessageBox.Show($"Unsupported file extension: {extension}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            var data = loader.Load(e.FullPath)?.ToList(); 
-
-            if (data != null)
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    UpdateListView(data, _listView); 
-                });
-            }
-            else
-            {
-                MessageBox.Show("File could not be loaded.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        private void OnTimerTick(object sender, EventArgs e)
-        {     var files = Directory.GetFiles(_directoryPath);
-          
-            MessageBox.Show("Timer ticked!");
-        }
-
-        public void StartMonitoring()
-        {
-            _fileWatcher.EnableRaisingEvents = true;
-            _timer.Start(); 
-            UpdateFileListView(GetFilesInDirectory(_directoryPath));
-        }
-
-        private List<DataRecord> GetFilesInDirectory(string directoryPath)
-        {
-            var files = Directory.GetFiles(directoryPath);
-            var data = new List<DataRecord>();
-
-            foreach (var file in files)
-            {
-                var extension = Path.GetExtension(file);
-                var loader = _loaderFactory.GetLoader(extension);
-                if (loader != null)
-                {
-                    var loadedData = loader.Load(file);
-                    if (loadedData != null)
-                    {
-                        data.AddRange(loadedData);
-                    }
-                }
-            }
-
-            return data;
-        }
-
-        public void StopMonitoring()
-        {
-            _fileWatcher.EnableRaisingEvents = false;
-            _timer.Stop(); 
-        }
-
-        public void UpdateListView(List<DataRecord> data, ListView listView)
-        {
-            listView.ItemsSource = data;
-        }
-
-        public void UpdateFileListView(List<DataRecord> data)
-        {
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                _listView.ItemsSource = data;
-            });
-        }
+    private async Task OnTimedEvent(object sender, ElapsedEventArgs e)
+    {
+        await FileProcessor.LoadNewFilesAsync(_directoryPath, _loaderFactory, _fileListView, _fileTimestamps);
     }
 
 
+    public async Task UpdateFileListView(IEnumerable<DataRecord> dataRecords)
+    {
+        await FileProcessor.UpdateFileListViewAsync(dataRecords, _fileListView);
+    }
 }
